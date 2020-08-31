@@ -13,7 +13,7 @@ module.exports = {
             useFindAndModify: false
         }).then(() => {
             console.log('Database sucessfully connected');
-            //  currencyHelper.createMockData();
+            currencyHelper.createMockData();
         },
             error => {
                 console.log('Database could not connected: ' + error)
