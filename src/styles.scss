@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.main-container{
+    padding: 2px 2px 0px 2px;
+}
+
+.fs-16 {
+    font-size: 16px !important;
+  }
+  
+  .fs-18 {
+    font-size: 18px !important;
+  }
+  
+  .fs-20 {
+    font-size: 20px !important;
+  }
+  .mat-cursor-pointer{
+      cursor: pointer;
+  }

@@ -1,0 +1,49 @@
+<div fxLayout="column" fxLayoutGap="5px">
+    <mat-card fxFlex>
+        <mat-card-content fxFlexFill>
+            <form [formGroup]="currencyForm">
+                <div fxLayout="column">
+                    <mat-form-field fxFlexFill>
+                        <mat-select formControlName="from" placeholder="Currency From">
+                            <ng-container *ngFor="let currency of currencyList">
+                                <mat-option [value]="currency">{{currency.name}} ({{currency.code}})</mat-option>
+                            </ng-container>
+                        </mat-select>
+                    </mat-form-field>
+
+                    <mat-form-field fxFlexFill>
+                        <mat-select formControlName="to" placeholder="Currency To">
+                            <ng-container *ngFor="let currency of currencyList">
+                                <mat-option [value]="currency.code">{{currency.name}} ({{currency.code}})</mat-option>
+                            </ng-container>
+                        </mat-select>
+                    </mat-form-field>
+
+                    <mat-form-field fxFlexFill>
+                        <input type="number" formControlName="amount" matInput placeholder="Enter Amount">
+                    </mat-form-field>
+
+                </div>
+
+
+            </form>
+            <div fxLayout="row" fxLayoutGap="5px">
+                <button [disabled]="!currencyForm.valid" mat-button mat-raised-button color="primary"
+                    (click)="convert()">Convert</button>
+                <button mat-button mat-raised-button color="primary" (click)="refreshRates()">Refresh Rates</button>
+            </div>
+        </mat-card-content>
+
+        <mat-card-content>
+            <div>
+                Converted Amount : {{result}}
+            </div>
+
+            <div>
+                Refreshed Rates : {{refreshedRates | json}}
+            </div>
+        </mat-card-content>
+    </mat-card>
+
+
+</div>
